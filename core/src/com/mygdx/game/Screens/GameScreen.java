@@ -1,5 +1,6 @@
 package com.mygdx.game.Screens;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -25,6 +26,14 @@ public class GameScreen implements Screen {
 
         //camera = (OrthographicCamera)stage.getViewport().getCamera();
         //camera.setToOrtho(false,1920,1080);
+
+        ui = new GameScreenUI();
+
+
+        music = Gdx.audio.newMusic(Gdx.files.internal("music_test1.wav"));
+        music.setLooping(true);
+        music.setVolume(1f);
+        music.play();
     }
 
 
@@ -35,12 +44,13 @@ public class GameScreen implements Screen {
 
     @Override
     public void render(float delta) {
-
+        stage.draw();
+        ui.Draw();
     }
 
     @Override
     public void resize(int width, int height) {
-
+        ui.resize(width, height);
     }
 
     @Override
@@ -60,6 +70,7 @@ public class GameScreen implements Screen {
 
     @Override
     public void dispose() {
-
+        stage.dispose();
+        music.dispose();
     }
 }
