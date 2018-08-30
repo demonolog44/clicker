@@ -5,6 +5,8 @@ package com.mygdx.game.UI;
  */
 public enum KeyInput {
 
+    //GameScreen
+
     GoUpdateMenu,
     GoSettingMenu
 }

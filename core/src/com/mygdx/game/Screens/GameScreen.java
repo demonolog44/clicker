@@ -19,7 +19,7 @@ public class GameScreen implements Screen {
 
     Music music;
 
-    GameScreen () {
+    public GameScreen () {
 
         stage = new Stage(new ScreenViewport());
 
