@@ -6,12 +6,14 @@ import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
+import com.mygdx.game.UI.GameControllerHandler;
 import com.mygdx.game.UI.GameScreenUI;
+import com.mygdx.game.UI.KeyInput;
 
 /**
  * Created by armok on 8/30/18.
  */
-public class GameScreen implements Screen {
+public class GameScreen implements Screen, GameControllerHandler{
 
     GameScreenUI ui;
 
@@ -27,7 +29,7 @@ public class GameScreen implements Screen {
         //camera = (OrthographicCamera)stage.getViewport().getCamera();
         //camera.setToOrtho(false,1920,1080);
 
-        ui = new GameScreenUI();
+        ui = new GameScreenUI(this);
 
 
         music = Gdx.audio.newMusic(Gdx.files.internal("music_test1.wav"));
@@ -72,5 +74,15 @@ public class GameScreen implements Screen {
     public void dispose() {
         stage.dispose();
         music.dispose();
+    }
+
+    @Override
+    public void pressKey(KeyInput key) {
+
+    }
+
+    @Override
+    public void releaseKey(KeyInput key) {
+
     }
 }

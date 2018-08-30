@@ -22,9 +22,9 @@ public class GameScreenUI {
     GameControllerHandler cntrlHandler;
 
 
-    public GameScreenUI(){//(GameControllerHandler eventHandler) {
+    public GameScreenUI(GameControllerHandler eventHandler) {
 
-        //cntrlHandler = eventHandler;
+        cntrlHandler = eventHandler;
 
         stage = new Stage();
         skin = new Skin();
